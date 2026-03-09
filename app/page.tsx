@@ -96,6 +96,21 @@ interface TrackResult {
   _index?: number; error?: string;
 }
 
+function CopyButton({ label, value, className }: { label: string; value: string; className?: string }) {
+  const [state, setState] = useState<"idle" | "copied" | "select">("idle");
+  const handleCopy = async () => {
+    const r = await copyText(value);
+    setState(r);
+    setTimeout(() => setState("idle"), 2000);
+  };
+  return (
+    <button onClick={handleCopy}
+      className={`flex-1 py-2 rounded-lg text-xs font-medium border transition-all ${state === "copied" ? "border-[#FFB400] bg-[#FFB400]/15 text-[#FFB400]" : state === "select" ? "border-blue-500 bg-blue-500/10 text-blue-400" : "border-[#2A2A2A] bg-[#1A1A1A] text-[#888] hover:border-[#FFB400]/60 hover:text-[#FFB400]"} ${className ?? ""}`}>
+      {state === "copied" ? `${label} ✓` : state === "select" ? "Tap to copy" : label}
+    </button>
+  );
+}
+
 function ResultCard({ result, primaryGenre, accentGenre, fusionMode, defaultOpen }: {
   result: TrackResult; primaryGenre: Genre | null; accentGenre: Genre | null;
   fusionMode: boolean; defaultOpen: boolean;
@@ -127,6 +142,16 @@ function ResultCard({ result, primaryGenre, accentGenre, fusionMode, defaultOpen
             </span>
           )}
           {result.concept && <p className="text-xs text-[#666] leading-relaxed">{result.concept}</p>}
+
+          {/* Copy for Suno — one-tap per field */}
+          <div className="rounded-xl border border-[#2A2A2A] bg-[#0F0F0F] px-3 py-3">
+            <p className="text-xs text-[#555] mb-2 tracking-wide">Copy for Suno</p>
+            <div className="flex gap-2">
+              <CopyButton label="Copy Style →" value={result.kie_style} />
+              <CopyButton label="Copy Lyrics →" value={result.kie_lyrics} />
+            </div>
+          </div>
+
           <OutputBox label="Style Tags" value={result.kie_style} charLimit={200} rows={3} />
           <OutputBox label="Lyrics" value={result.kie_lyrics} charLimit={4500} rows={16} />
         </div>
