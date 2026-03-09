@@ -176,6 +176,20 @@ export const GENRES: Genre[] = [
     hitFormula: 'THE DANCE DEFINES THE SONG. The track needs a 15-second section so rhythmically irresistible it invents its own dance move. Atalaku hype voice builds energy. Percussive Congolese-influenced groove. Fast and relentless — never let the energy drop.',
     lyricTemplate: 'rapid-fire',
   },
+  {
+    key: 'afro_drill',
+    name: 'Afro Drill',
+    region: 'west',
+    emoji: '🏙️',
+    tagline: 'Lagos street energy, mixed voices',
+    bpm: [118, 128],
+    defaultLanguage: 'English + Yoruba/Pidgin street mix',
+    styleTags: ['afro drill', 'urban afrobeats', 'street afro', '808 sub bass', 'punchy kick', 'dark piano', 'male rap vocal', 'female melodic hook', 'remastered', 'gritty', 'burna boy style'],
+    referenceArtists: ['Burna Boy', 'Rema', 'Victony', 'Shallipopi', 'Central Cee × Afrobeats'],
+    culturalDNA: `Afro Drill is the Lagos/Joburg street sound — urban Afrobeats with UK Drill's dark energy and storytelling directness. 808 sub bass pitch-slides under a punchy kick. Hi-hats triplet or 16th-note with open hats. Dark minimal piano hook (3–5 notes). MIXED VOICES: male deep rap/spoken word in verses (street storytelling, specific Lagos imagery — danfo buses, neon signs, designer shoes, mama's prayers) with [Male] label; female soulful melodic hook in chorus (emotional contrast) with [Female] label. Duet moments in bridge with [Duet] label. Lyrics mix English with Yoruba and Pidgin naturally. -8 LUFS remastered production. Add performance tags: (male, deep), (rap), (female, soulful), (melodic hook), (breathy), (duet).`,
+    hitFormula: 'MIXED VOICES = THE CONTRAST IS THE HIT. Male gritty verse → female melodic chorus = emotional push-pull that hooks everyone. The 808 must be felt in the chest. Specific street imagery per verse (a Lagos street name, danfo color, neon sign brand). Hook before 40 seconds. Production at -8 LUFS — louder than Afro House.',
+    lyricTemplate: 'rapid-fire',
+  },
 
   // ── EAST AFRICA ──────────────────────────────────────────────────────
   {
@@ -322,6 +336,48 @@ export const GENRES: Genre[] = [
     hitFormula: 'SWAGGER IS THE RHYTHM. Slowed house groove with township slang creates specific pride and joy. Vocal delivery is half-sung half-spoken — confidently casual. Reference Johannesburg, township life, freedom. This is post-apartheid joy.',
     lyricTemplate: 'verse-hook',
   },
+  {
+    key: 'tribal_house',
+    name: 'Tribal House',
+    region: 'south',
+    emoji: '🥁',
+    tagline: 'Ancient drums meet deep house',
+    bpm: [120, 126],
+    defaultLanguage: 'English + Zulu chant',
+    styleTags: ['tribal house', 'afro house', 'djembe', 'talking drum', 'congas', 'ethnic percussion', 'spiritual chant', 'hypnotic', 'ancestral', 'organic', 'deep house foundation'],
+    referenceArtists: ['Enoo Napa', 'Caiiro', 'Culoe De Song', 'Hyenah', 'Themba'],
+    culturalDNA: `Tribal House fuses traditional African percussion vocabulary with deep house electronic production. Talking drum or djembe drives the groove with live feel — slightly off the grid, human. Congas, shakers, and handclaps layer complex polyrhythmic patterns that feel ancient. Electronic kick and bass ground it in house. Vocals are minimal — short spiritual chants, African language phrases, call-and-response fragments. The production should feel like a ceremony happening inside a club. Every percussion hit carries cultural meaning — it is not decoration.`,
+    hitFormula: 'THE DRUM IS THE ANCESTOR SPEAKING. Multiple percussion layers create a shifting hypnotic tapestry. Vocals are calls to the ancestors, not pop hooks. Patient long builds. The drop reveals the full percussive ensemble together.',
+    lyricTemplate: 'chant' as LyricTemplate,
+  },
+  {
+    key: 'organic_house',
+    name: 'Organic House',
+    region: 'south',
+    emoji: '🌿',
+    tagline: 'Acoustic textures, deep groove',
+    bpm: [120, 126],
+    defaultLanguage: 'English + African chant phrases',
+    styleTags: ['organic house', 'afro house', 'acoustic guitar', 'kalimba', 'flute', 'live strings', 'warm bass', 'breathy female vocal', 'minimal electronic', 'keinemusik style', 'deep house'],
+    referenceArtists: ['Keinemusik', 'Black Coffee', 'Âme', 'ANDHIM', 'Sébastien Léger'],
+    culturalDNA: `Organic House sits at the intersection of deep house and acoustic music — the warmth of live instruments inside electronic production. Acoustic guitar, flute, kalimba, hand drums, and live strings replace synthesizers. The production is minimal and breathing — lots of space. Female vocals are breathy and short, more texture than melody. Sub bass is warm and round, not distorted. The groove is patient and hypnotic. Organic House works globally because it sounds human in a world of digital perfection. Keinemusik aesthetic: effortlessly cool, warm enough to feel alive.`,
+    hitFormula: 'SPACE IS AN INSTRUMENT. What you leave out defines the track. One acoustic element (guitar, flute, or kalimba) carries the melodic identity. Bass breathes under a soft kick. Vocals are felt not forced. Should sound perfect at sunset on a rooftop in Cape Town or Ibiza.',
+    lyricTemplate: 'chant' as LyricTemplate,
+  },
+  {
+    key: 'afropiano',
+    name: 'Afropiano',
+    region: 'south',
+    emoji: '🎹',
+    tagline: 'Amapiano meets Afrobeats heat',
+    bpm: [110, 116],
+    defaultLanguage: 'English + Zulu + Yoruba mix',
+    styleTags: ['afropiano', 'amapiano', 'afrobeats', 'log drum bass', 'jazzy piano stabs', 'afrobeats percussion', 'pan-african fusion', 'melodic hook', 'warm', 'sun-el musician style'],
+    referenceArtists: ['Sun-El Musician', 'Kabza De Small', 'Focalistic', 'Omah Lay', 'Ckay'],
+    culturalDNA: `Afropiano is the most commercially successful Pan-African fusion of 2024–2025 — Amapiano's log drum bass and jazzy piano vocabulary meeting Afrobeats' melodic hooks and West African percussion energy. The log drum bass is mandatory. Piano stabs are jazzy (dominant 7ths, suspended chords) but groove-locked. Shaker loops and Afrobeats percussion sit on top of the Amapiano foundation. Vocal style borrows from Afrobeats: melodic and hook-driven. Lyrics mix Zulu or Sotho township slang with Yoruba and English — sonic representation of a Pan-African generation.`,
+    hitFormula: 'LOG DRUM + AFROBEATS HOOK = PAN-AFRICAN HIT. Log drum bass is mandatory and must be felt. Piano stabs jazzy but danceable. Vocal hook as catchy as Afrobeats pop but in Amapiano\'s relaxed pocket. Mix both West and South African language references per verse.',
+    lyricTemplate: 'verse-hook' as LyricTemplate,
+  },
 
   // ── AFRO-LATIN ───────────────────────────────────────────────────────
   {
@@ -410,12 +466,12 @@ export const THEME_POOL = [
 ];
 
 export const LANGUAGE_OPTIONS: Record<RegionKey, string[]> = {
-  north:  ['Darija Arabic', 'Modern Standard Arabic', 'French-Arabic mix'],
-  west:   ['English + Yoruba', 'Pidgin English', 'English + Twi', 'French + Wolof'],
-  east:   ['Swahili', 'Swahili + English'],
-  central:['Lingala', 'French + Lingala'],
-  south:  ['English + Zulu', 'Zulu / Sotho', 'English'],
-  latin:  ['Portuguese', 'English + Spanish', 'Kriolu (Cape Verdean)', 'English + Yoruba'],
+  north:  ['Darija Arabic', 'Modern Standard Arabic', 'French-Arabic mix', 'English + Arabic'],
+  west:   ['English + Yoruba', 'English Only', 'Pidgin English', 'Yoruba Only', 'English + Twi', 'French + Wolof'],
+  east:   ['Swahili', 'Swahili + English', 'English Only'],
+  central:['Lingala', 'French + Lingala', 'English + Lingala'],
+  south:  ['English + Zulu', 'English Only', 'Zulu / Sotho', 'English + Tswana'],
+  latin:  ['Portuguese', 'English + Spanish + Yoruba', 'English + Spanish', 'Kriolu (Cape Verdean)', 'English + Yoruba'],
 };
 
 export const FUSION_PAIRS: Array<{ a: string; b: string; score: number; note: string }> = [
@@ -429,6 +485,12 @@ export const FUSION_PAIRS: Array<{ a: string; b: string; score: number; note: st
   { a: 'kizomba',         b: 'afro_house',       score: 3, note: 'Angolan warmth meets South African depth' },
   { a: 'rai',             b: 'afrobeats',        score: 3, note: 'North meets West — Arabic vocals over Lagos rhythm' },
   { a: 'gnawa',           b: 'amapiano',         score: 3, note: 'Guembri bass meets log drum — trance meets groove' },
+  { a: 'afro_drill',      b: 'afro_house',       score: 4, note: 'Street energy over Afro House groove — Burna Boy meets Black Coffee' },
+  { a: 'tribal_house',    b: 'organic_house',    score: 5, note: 'Percussion ceremony meets acoustic warmth — perfect ritual house' },
+  { a: 'afropiano',       b: 'afrobeats',        score: 5, note: 'Log drum meets Lagos hook — the Pan-African hit formula' },
+  { a: 'afropiano',       b: 'bongo_flava',      score: 4, note: 'East meets South — Bongopiano extended to Tanzanian soul' },
+  { a: 'organic_house',   b: 'gnawa',            score: 4, note: 'Guembri acoustic texture inside Organic House — haunting' },
+  { a: 'tribal_house',    b: 'afro_house',       score: 4, note: 'Percussion ceremony with Afro House electronics — Enoo Napa style' },
 ];
 
 export function getGenresByRegion(region: RegionKey): Genre[] {
@@ -442,3 +504,43 @@ export function getGenreByKey(key: string): Genre | undefined {
 export function getFusionScore(a: string, b: string): { score: number; note: string } | null {
   return FUSION_PAIRS.find(p => (p.a === a && p.b === b) || (p.a === b && p.b === a)) ?? null;
 }
+
+export interface ChannelProfile {
+  id: string;
+  name: string;
+  emoji: string;
+  defaultRegion: RegionKey;
+  defaultGenreKey: string;
+  defaultLanguage: string;
+  description: string;
+}
+
+export const DEFAULT_CHANNELS: ChannelProfile[] = [
+  {
+    id: 'rooftop',
+    name: 'Rooftop Sessions',
+    emoji: '🌆',
+    defaultRegion: 'south',
+    defaultGenreKey: 'afro_house',
+    defaultLanguage: 'English + Zulu',
+    description: 'Deep Afro House — Black Coffee energy, late night boutique club',
+  },
+  {
+    id: 'street',
+    name: 'Street Tape Africa',
+    emoji: '🏙️',
+    defaultRegion: 'west',
+    defaultGenreKey: 'afro_drill',
+    defaultLanguage: 'English + Yoruba/Pidgin street mix',
+    description: 'Afro Drill & Urban Afrobeats — Lagos street energy, mixed voices',
+  },
+  {
+    id: 'global',
+    name: 'Global Vibes',
+    emoji: '🌍',
+    defaultRegion: 'west',
+    defaultGenreKey: 'afropop',
+    defaultLanguage: 'English Only',
+    description: 'Pan-African crossover — streaming-optimised, global audience',
+  },
+];
