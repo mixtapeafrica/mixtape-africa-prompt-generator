@@ -151,6 +151,7 @@ export default function Home() {
 
   // Settings
   const [theme, setTheme] = useState(THEME_POOL[0]);
+  const [customTheme, setCustomTheme] = useState("");
   const [language, setLanguage] = useState(activeChannel.defaultLanguage);
   const [customLanguage, setCustomLanguage] = useState("");
   const [shortsVersion, setShortsVersion] = useState(false);
@@ -196,6 +197,7 @@ export default function Home() {
     setPrimaryGenre(g);
     setActiveRegion(g.region);
     setTheme(t);
+    setCustomTheme("");
     setLanguage(lang);
     setCustomLanguage("");
     setFusionMode(false);
@@ -243,7 +245,8 @@ export default function Home() {
     }
   };
 
-  const generate = () => runGenerate(primaryGenre, accentGenre, fusionMode, effectiveLanguage, theme.value);
+  const effectiveTheme = customTheme.trim() || theme.value;
+  const generate = () => runGenerate(primaryGenre, accentGenre, fusionMode, effectiveLanguage, effectiveTheme);
 
   return (
     <main className="min-h-screen max-w-lg mx-auto px-4 py-8" suppressHydrationWarning>
@@ -367,16 +370,27 @@ export default function Home() {
       <section className="mb-5">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-xs tracking-widest text-[#666] uppercase">Lyric Theme</h2>
-          <button onClick={() => setTheme(rand(THEME_POOL))} className="text-xs text-[#555] hover:text-[#FFB400] transition-colors">🎲 Random</button>
+          <button onClick={() => { setTheme(rand(THEME_POOL)); setCustomTheme(""); }} className="text-xs text-[#555] hover:text-[#FFB400] transition-colors">🎲 Random</button>
         </div>
+        <input
+          type="text"
+          value={customTheme}
+          onChange={e => setCustomTheme(e.target.value)}
+          placeholder="Type anything — e.g. Lagos nightlife, new money, heartbreak, hustle"
+          className="w-full px-3 py-2 rounded-lg bg-[#141414] border border-[#2A2A2A] text-sm text-[#E8E8E8] placeholder-[#444] outline-none focus:border-[#FFB400]/50 mb-3"
+        />
+        <p className="text-xs text-[#555] mb-2">Or pick a preset:</p>
         <div className="grid grid-cols-2 gap-2">
           {THEME_POOL.map(t => (
-            <button key={t.value} onClick={() => setTheme(t)}
-              className={`py-2 px-3 rounded-lg text-sm text-left transition-all ${theme.value === t.value ? "bg-[#FFB400] text-[#0D0D0D] font-medium" : "bg-[#141414] border border-[#2A2A2A] text-[#999]"}`}>
+            <button key={t.value} onClick={() => { setTheme(t); setCustomTheme(""); }}
+              className={`py-2 px-3 rounded-lg text-sm text-left transition-all ${!customTheme && theme.value === t.value ? "bg-[#FFB400] text-[#0D0D0D] font-medium" : "bg-[#141414] border border-[#2A2A2A] text-[#999]"}`}>
               {t.label}
             </button>
           ))}
         </div>
+        {customTheme && (
+          <p className="text-xs text-[#555] mt-2">Using: <span className="text-[#888]">"{customTheme}"</span></p>
+        )}
       </section>
 
       {/* ── STYLE MODES ── */}
